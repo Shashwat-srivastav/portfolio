@@ -719,6 +719,39 @@ section:not(.hero) {
     color: var(--muted);
 }
 
+.achievement-links {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.achievement-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 255, 65, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--terminal-green);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.achievement-link:hover {
+    background: rgba(0, 255, 65, 0.1);
+    border-color: var(--terminal-green);
+    transform: translateX(3px);
+}
+
+.achievement-link .link-icon {
+    font-size: 0.875rem;
+}
+
 /* ===== Projects Grid ===== */
 .projects-grid {
     display: grid;
