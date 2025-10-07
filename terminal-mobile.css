@@ -78,26 +78,27 @@
         overflow: hidden;
     }
     
-    .terminal-layout {
-        flex-direction: column;
-    }
-    
-    .terminal-sidebar {
-        position: relative;
-        width: 100%;
+    /* Hero Grid for Mobile */
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
         padding: 20px;
-        top: 0;
-        border-right: none;
-        border-bottom: 1px solid var(--terminal-green);
-        margin-bottom: 20px;
     }
     
-    .terminal-main {
-        margin-left: 0;
+    .hero-profile {
+        order: 1;
     }
     
-    .hero-content {
-        padding: 20px;
+    .hero-main-content {
+        order: 2;
+    }
+    
+    .hero-title .title-main {
+        font-size: 1.8rem;
+    }
+    
+    .hero-title .title-accent {
+        font-size: 1rem;
     }
     
     .terminal-window {

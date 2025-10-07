@@ -157,8 +157,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .profile-photo {
-    width: 40px;
-    height: 40px;
+    width: 10px;
+    height: 10px;
     border-radius: 3px; /* Terminal-style sharp corners */
     object-fit: cover;
     border: 1px solid var(--terminal-green);
@@ -187,17 +187,20 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     max-width: 550px;
+    position: relative;
 }
 
 .ticker-content {
     color: var(--terminal-green);
     white-space: nowrap;
-    animation: ticker 20s linear infinite;
+    display: inline-block;
+    padding-right: 50px;
+    animation: ticker-scroll 30s linear infinite;
 }
 
-@keyframes ticker {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+@keyframes ticker-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 .nav-links {
@@ -282,6 +285,9 @@ h1, h2, h3, h4, h5, h6 {
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 2rem;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
 }
 
 /* ===== Hero Section ===== */
@@ -492,6 +498,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===== Sections ===== */
+section:not(.hero) {
+    position: relative;
+    clear: both;
+    z-index: 10;
+}
+
+section:not(.hero) {
+    position: relative;
+    clear: both;
+    z-index: 5;
+}
 .section {
     padding: var(--section-padding) 0;
     position: relative;

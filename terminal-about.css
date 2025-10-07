@@ -4,6 +4,9 @@
     position: relative;
     background: var(--background);
     border-bottom: 1px solid var(--border);
+    clear: both;
+    margin-top: 2rem;
+    z-index: 10;
 }
 
 .terminal-window {
