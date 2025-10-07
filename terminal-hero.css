@@ -213,6 +213,16 @@
     font-weight: 700;
 }
 
+.cmd-icon {
+    color: var(--terminal-green);
+    flex-shrink: 0;
+}
+
+.action-btn:hover .cmd-icon {
+    color: var(--terminal-green);
+    filter: brightness(1.2);
+}
+
 /* Hero Main Content Column */
 .hero-main-content {
     display: flex;
