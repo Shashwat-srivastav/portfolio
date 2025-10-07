@@ -96,12 +96,14 @@
     height: auto;
     display: block;
     filter: contrast(1.05) brightness(1.02) grayscale(0.2);
-    transition: opacity 0.4s ease, filter 0.3s ease;
+    transition: filter 0.3s ease;
 }
 
 .profile-photo-default {
     position: relative;
     z-index: 1;
+    opacity: 1;
+    transition: opacity 0.4s ease;
 }
 
 .profile-photo-hover {
