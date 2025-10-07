@@ -734,18 +734,29 @@ section:not(.hero) {
     background: rgba(0, 255, 65, 0.05);
     border: 1px solid var(--border);
     border-radius: 3px;
-    color: var(--terminal-green);
-    text-decoration: none;
+    color: var(--terminal-green) !important;
+    text-decoration: none !important;
     font-family: var(--font-mono);
     font-size: 0.75rem;
     font-weight: 500;
     transition: all 0.2s ease;
 }
 
+.achievement-link:link,
+.achievement-link:visited {
+    color: var(--terminal-green) !important;
+    text-decoration: none !important;
+}
+
 .achievement-link:hover {
     background: rgba(0, 255, 65, 0.1);
     border-color: var(--terminal-green);
     transform: translateX(3px);
+    color: var(--terminal-green) !important;
+}
+
+.achievement-link:active {
+    color: var(--terminal-green) !important;
 }
 
 .achievement-link .link-icon {
