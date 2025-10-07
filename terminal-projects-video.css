@@ -1,0 +1,112 @@
+/* Project Video Demo Styles */
+.project-video-demo {
+    margin: 20px 0;
+    border: 1px solid var(--terminal-green);
+    border-radius: 3px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.video-demo-header {
+    background: var(--terminal-green);
+    color: var(--background);
+    padding: 6px 12px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.demo-label {
+    display: inline-block;
+}
+
+/* Override video container styles for project integration */
+.project-video-demo .terminal-video-container {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.project-video-demo .terminal-video-wrapper {
+    padding-bottom: 56.25%; /* 16:9 aspect ratio for landscape */
+    position: relative;
+    background: #000;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+}
+
+.project-video-demo .terminal-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Changed back to contain to show full landscape video */
+    background: #000;
+}
+
+.project-video-demo .video-header {
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--border);
+}
+
+.project-video-demo .video-footer {
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid var(--border);
+    padding: 10px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-video-demo .video-metrics {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.project-video-demo .video-metric {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+}
+
+.project-video-demo .metric-label {
+    color: var(--muted-foreground);
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.project-video-demo .metric-value {
+    color: var(--terminal-green);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Portrait Video Styles (for vertical/mobile videos) */
+.project-video-portrait .terminal-video-wrapper {
+    padding-bottom: 177.78%; /* 9:16 aspect ratio for portrait */
+    max-width: 400px; /* Limit width for portrait videos */
+    margin: 0 auto; /* Center the video */
+}
+
+.project-video-portrait .terminal-video {
+    object-fit: contain; /* Keep full video visible */
+}
+
+/* Responsive adjustment for portrait videos */
+@media (max-width: 768px) {
+    .project-video-portrait .terminal-video-wrapper {
+        max-width: 100%;
+        padding-bottom: 177.78%;
+    }
+}

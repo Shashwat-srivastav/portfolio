@@ -1,0 +1,434 @@
+/* Terminal Projects Section */
+.projects-section {
+    padding: var(--section-padding) 0;
+    position: relative;
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
+}
+
+.section-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--terminal-green);
+    position: relative;
+    display: inline-block;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-mono);
+}
+
+/* Terminal Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.project-card:hover {
+    border-color: var(--terminal-green);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.15);
+    transform: translateY(-5px);
+}
+
+.project-header {
+    background: var(--gray-800);
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.project-icon {
+    font-size: 1.2rem;
+}
+
+.project-meta {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted-foreground);
+}
+
+.project-content {
+    padding: 20px;
+}
+
+.project-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--terminal-green);
+    font-family: var(--font-mono);
+}
+
+.project-description {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.project-description li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.project-description li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--terminal-green);
+    font-family: var(--font-mono);
+    font-weight: 700;
+}
+
+/* Terminal Metrics Display */
+.project-metrics {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.metrics-title {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--muted-foreground);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.metric-box {
+    text-align: center;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+}
+
+.metric-box-value {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.value-positive {
+    color: var(--terminal-green);
+}
+
+.value-negative {
+    color: var(--terminal-red);
+}
+
+.value-neutral {
+    color: var(--terminal-amber);
+}
+
+.metric-box-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted-foreground);
+}
+
+/* Project Stack */
+.project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.stack-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    background: rgba(0, 255, 65, 0.08);
+    border: 1px solid rgba(0, 255, 65, 0.3);
+}
+
+/* Project Links */
+.project-links {
+    margin-bottom: 15px;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 12px;
+    background: rgba(0, 255, 65, 0.1);
+    border: 1px solid var(--terminal-green);
+    border-radius: 3px;
+    color: var(--terminal-green);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.project-link:hover {
+    background: rgba(0, 255, 65, 0.2);
+    box-shadow: 0 0 8px var(--terminal-green-glow);
+}
+
+.link-icon {
+    margin-right: 6px;
+    border-radius: 3px;
+    color: var(--terminal-green);
+}
+
+/* Project Impact */
+.project-impact {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+}
+
+.impact-label {
+    color: var(--muted-foreground);
+    margin-right: 8px;
+}
+
+.impact-value {
+    color: var(--foreground);
+}
+
+/* Project Visualization */
+.project-visualization {
+    margin-top: 15px;
+    position: relative;
+    height: 120px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.chart-grid-line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.chart-grid-line.line-1 { top: 25%; }
+.chart-grid-line.line-2 { top: 50%; }
+.chart-grid-line.line-3 { top: 75%; }
+
+.chart-grid-line-v {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.chart-grid-line-v.line-1 { left: 25%; }
+.chart-grid-line-v.line-2 { left: 50%; }
+.chart-grid-line-v.line-3 { left: 75%; }
+
+.chart-data {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+}
+
+/* Trading strategy chart - stylized */
+.strategy-chart .chart-data {
+    background: linear-gradient(180deg, 
+        rgba(0, 255, 65, 0) 0%, 
+        rgba(0, 255, 65, 0.1) 100%);
+    clip-path: polygon(
+        0% 100%, 5% 80%, 10% 85%, 15% 65%, 20% 70%, 25% 60%, 30% 65%, 
+        35% 40%, 40% 45%, 45% 35%, 50% 40%, 55% 30%, 60% 35%, 65% 25%, 
+        70% 30%, 75% 20%, 80% 25%, 85% 15%, 90% 20%, 95% 10%, 100% 20%, 
+        100% 100%
+    );
+}
+
+.strategy-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.strategy-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--terminal-green);
+    clip-path: polygon(
+        0% 0%, 5% 80%, 10% 85%, 15% 65%, 20% 70%, 25% 60%, 30% 65%, 
+        35% 40%, 40% 45%, 45% 35%, 50% 40%, 55% 30%, 60% 35%, 65% 25%, 
+        70% 30%, 75% 20%, 80% 25%, 85% 15%, 90% 20%, 95% 10%, 100% 20%
+    );
+    transform: translateY(20px);
+}
+
+/* AI algorithm visualization */
+.algo-visual .chart-data {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.node {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--terminal-green);
+    box-shadow: 0 0 5px var(--terminal-green-glow);
+    position: relative;
+}
+
+.node::before,
+.node::after {
+    content: '';
+    position: absolute;
+    background: var(--terminal-green);
+    opacity: 0.5;
+}
+
+.node::before {
+    width: 40px;
+    height: 1px;
+    top: 5px;
+    left: -40px;
+}
+
+.node::after {
+    width: 1px;
+    height: 30px;
+    top: -30px;
+    left: 5px;
+}
+
+.node-container {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Code snippet visualization */
+.code-visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.code-line {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--gray-300);
+    line-height: 1.4;
+    margin-bottom: 3px;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.code-line .keyword {
+    color: var(--terminal-amber);
+}
+
+.code-line .comment {
+    color: var(--gray-500);
+}
+
+.code-line .string {
+    color: var(--terminal-green);
+}
+
+.code-line .function {
+    color: #569CD6; /* Light blue */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .project-meta {
+        margin-top: 8px;
+    }
+    
+    .project-impact {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .impact-label {
+        margin-bottom: 5px;
+    }
+}

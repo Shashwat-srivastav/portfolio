@@ -87,6 +87,7 @@
     border-radius: 3px;
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+    position: relative;
 }
 
 .profile-photo {
@@ -94,7 +95,35 @@
     height: auto;
     display: block;
     filter: contrast(1.05) brightness(1.02) grayscale(0.2);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.profile-photo-default {
+    position: relative;
+    z-index: 1;
+}
+
+.profile-photo-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+}
+
+.profile-photo-frame:hover .profile-photo-default {
+    opacity: 0;
+}
+
+.profile-photo-frame:hover .profile-photo-hover {
+    opacity: 1;
+    animation: holdHoverImage 2s ease forwards;
+}
+
+@keyframes holdHoverImage {
+    0% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 .profile-photo:hover {
