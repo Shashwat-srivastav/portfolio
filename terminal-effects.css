@@ -1,0 +1,68 @@
+/* Terminal Screen Effects */
+.screen-effects {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0.015;
+    mix-blend-mode: soft-light;
+}
+
+.screen-noise {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3) 0px,
+        rgba(0, 0, 0, 0.3) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    animation: scanlines 0.8s linear infinite;
+}
+
+.screen-flicker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+    opacity: 0;
+    animation: flicker 5s infinite;
+}
+
+.screen-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(0, 255, 0, 0.02) 0%, transparent 80%);
+    animation: glow 10s infinite alternate;
+}
+
+@keyframes scanlines {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(2px); }
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 0; }
+    92% { opacity: 0; }
+    93% { opacity: 0.1; }
+    94% { opacity: 0; }
+    95% { opacity: 0.1; }
+    96% { opacity: 0; }
+    97% { opacity: 0.1; }
+    98% { opacity: 0; }
+    99% { opacity: 0.1; }
+}
+
+@keyframes glow {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.2; }
+}

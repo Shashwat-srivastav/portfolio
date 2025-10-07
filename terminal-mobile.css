@@ -1,0 +1,122 @@
+/* Terminal theme adjustments for mobile */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.mobile-menu-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--terminal-green);
+    transition: all 0.3s linear;
+    box-shadow: 0 0 5px var(--terminal-green-glow);
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(18, 18, 18, 0.97);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+        border-bottom: 1px solid var(--terminal-green);
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        animation: terminalOpen 0.3s ease-out;
+    }
+    
+    @keyframes terminalOpen {
+        from { 
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to { 
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .nav-ticker {
+        max-width: 150px;
+        overflow: hidden;
+    }
+    
+    .terminal-layout {
+        flex-direction: column;
+    }
+    
+    .terminal-sidebar {
+        position: relative;
+        width: 100%;
+        padding: 20px;
+        top: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--terminal-green);
+        margin-bottom: 20px;
+    }
+    
+    .terminal-main {
+        margin-left: 0;
+    }
+    
+    .hero-content {
+        padding: 20px;
+    }
+    
+    .terminal-window {
+        max-height: none;
+    }
+    
+    .terminal-header {
+        padding: 8px 12px;
+    }
+    
+    .command-history {
+        padding: 15px;
+    }
+    
+    .skills-terminal {
+        margin-top: 20px;
+    }
+    
+    .terminal-chart {
+        height: 180px;
+    }
+}

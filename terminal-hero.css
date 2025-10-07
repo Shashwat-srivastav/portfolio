@@ -1,0 +1,523 @@
+/* Terminal Header Styles */
+.terminal-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--terminal-green);
+    padding: 6px 0;
+    margin-top: 60px;
+}
+
+.terminal-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+}
+
+.terminal-status {
+    display: flex;
+    align-items: center;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.status-indicator.online {
+    background-color: var(--terminal-green);
+    box-shadow: 0 0 8px var(--terminal-green-glow);
+}
+
+.status-text {
+    color: var(--terminal-green);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.terminal-ticker {
+    display: flex;
+    gap: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: ticker 20s linear infinite;
+}
+
+.ticker-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.ticker-value {
+    font-weight: 700;
+}
+
+.ticker-value.positive {
+    color: var(--terminal-green);
+}
+
+.ticker-value.negative {
+    color: var(--terminal-red);
+}
+
+.ticker-value.neutral {
+    color: var(--terminal-amber);
+}
+
+/* Terminal Split Layout */
+.terminal-layout {
+    display: flex;
+    min-height: calc(100vh - 112px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fixed Left Sidebar */
+.terminal-sidebar {
+    width: 300px;
+    background: var(--surface);
+    border-right: 1px solid var(--terminal-green);
+    padding: 20px 0;
+    position: fixed;
+    top: 112px;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 20px;
+    justify-content: space-between;
+}
+
+/* Scrollable Main Content */
+.terminal-main {
+    flex: 1;
+    margin-left: 300px;
+    padding: 20px 0;
+}
+
+/* Terminal Photo Container */
+.terminal-photo-container {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.terminal-frame {
+    background: var(--background);
+    border: 1px solid var(--terminal-green);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.1);
+    margin-bottom: 15px;
+}
+
+.frame-header {
+    background: var(--terminal-green);
+    color: var(--background);
+    padding: 4px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.frame-title {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.frame-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.control-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.frame-content {
+    padding: 15px;
+}
+
+.terminal-photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border: none;
+    filter: contrast(1.05) brightness(1.02) grayscale(0.2);
+    transition: all 0.3s ease;
+}
+
+.terminal-photo:hover {
+    filter: contrast(1.1) brightness(1.05) grayscale(0);
+}
+
+.terminal-status-badge {
+    display: flex;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--terminal-green);
+    border-radius: 3px;
+    padding: 6px 10px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+}
+
+.terminal-specs {
+    margin-bottom: 25px;
+}
+
+.spec-item {
+    border-bottom: 1px solid var(--border);
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.spec-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+    font-weight: 700;
+}
+
+.spec-value {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+}
+
+.spec-value.highlight {
+    color: var(--terminal-green);
+    font-weight: 700;
+}
+
+/* Terminal Commands */
+.terminal-commands {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.command-header {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--muted-foreground);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 5px;
+    display: block;
+}
+
+.command-btn {
+    display: block;
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    background: rgba(0, 255, 65, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: var(--foreground);
+    transition: all 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.command-btn:hover {
+    background: rgba(0, 255, 65, 0.1);
+    border-color: var(--terminal-green);
+    box-shadow: 0 0 5px rgba(0, 255, 65, 0.15);
+}
+
+.command-prefix {
+    color: var(--terminal-green);
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+/* Hero Content Styling */
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.main-frame {
+    margin-bottom: 30px;
+}
+
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.title-accent {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    color: var(--terminal-green);
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+.title-main {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: var(--foreground);
+}
+
+/* Command Line Effect */
+.command-line {
+    font-family: var(--font-mono);
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.command-prompt {
+    color: var(--terminal-green);
+}
+
+.cursor {
+    width: 10px;
+    height: 16px;
+    background-color: var(--terminal-green);
+    margin-left: 5px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.blink {
+    animation: blink 1s step-end infinite;
+}
+
+/* Terminal Metrics Display */
+.metrics-terminal {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.metrics-terminal .metric-item {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.metrics-terminal .metric-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted-foreground);
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.metrics-terminal .metric-value {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-feature-settings: "tnum";
+    position: relative;
+}
+
+.metrics-terminal .metric-percent {
+    font-size: 1rem;
+}
+
+.metrics-terminal .metric-suffix {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted-foreground);
+}
+
+.positive {
+    color: var(--terminal-green);
+}
+
+.negative {
+    color: var(--terminal-red);
+}
+
+.neutral {
+    color: var(--terminal-amber);
+}
+
+/* Trading Strategy Section */
+.strategy-preview {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+}
+
+.strategy-title {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    color: var(--terminal-green);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.highlight {
+    color: var(--terminal-green);
+    font-weight: 700;
+}
+
+/* Sample Trading Chart */
+.trading-chart {
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.chart-title {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted-foreground);
+}
+
+.chart-legend {
+    display: flex;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+}
+
+.legend-color {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 5px;
+    border-radius: 2px;
+}
+
+.legend-color.strategy {
+    background-color: var(--terminal-green);
+}
+
+.legend-color.benchmark {
+    background-color: var(--terminal-amber);
+}
+
+.chart-visual {
+    height: 100px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.chart-line {
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.chart-line.strategy {
+    background: linear-gradient(to right, transparent 0%, var(--terminal-green) 100%);
+    height: 60px;
+    clip-path: polygon(
+        0% 100%, 5% 80%, 10% 85%, 15% 65%, 20% 70%, 25% 60%, 30% 65%, 
+        35% 40%, 40% 45%, 45% 35%, 50% 40%, 55% 30%, 60% 35%, 65% 25%, 
+        70% 30%, 75% 20%, 80% 25%, 85% 15%, 90% 20%, 95% 10%, 100% 20%, 
+        100% 100%
+    );
+}
+
+.chart-line.benchmark {
+    background: linear-gradient(to right, transparent 0%, var(--terminal-amber) 100%);
+    height: 40px;
+    clip-path: polygon(
+        0% 100%, 5% 90%, 10% 85%, 15% 80%, 20% 75%, 25% 70%, 30% 75%, 
+        35% 65%, 40% 70%, 45% 60%, 50% 65%, 55% 55%, 60% 60%, 65% 50%, 
+        70% 55%, 75% 45%, 80% 50%, 85% 40%, 90% 45%, 95% 35%, 100% 40%, 
+        100% 100%
+    );
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 992px) {
+    .terminal-layout {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .terminal-sidebar {
+        width: 100%;
+        position: relative;
+        top: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--terminal-green);
+        padding-bottom: 20px;
+    }
+    
+    .terminal-main {
+        margin-left: 0;
+    }
+    
+    .terminal-photo-container {
+        max-width: 300px;
+        margin: 0 auto 20px;
+    }
+    
+    .metrics-terminal {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
