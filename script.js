@@ -425,7 +425,7 @@ console.log('%c👋 Hey there, curious developer!', 'color: #06b6d4; font-size: 
 console.log('%cInterested in how this portfolio was built?', 'color: #a1a1aa; font-size: 14px;');
 console.log('%cLet\'s connect: shashwat1322001@gmail.com', 'color: #10b981; font-size: 14px; font-weight: bold;');
 console.log('%c\nStats:', 'color: #f59e0b; font-size: 16px; font-weight: bold;');
-console.log('• Avenir-HKU: Round 2 Finalist (1000+ participants, 200+ universities)');
+console.log('• Avenir-HKU: Top 10 Global — Final Round (1000+ participants, 200+ universities)');
 console.log('• Flipkart Grid 6.0: Top 79 / 500,000+');
 console.log('• Resume Platform: 2,700+ users served');
 console.log('• Product Analyzer: 98.25% accuracy');
